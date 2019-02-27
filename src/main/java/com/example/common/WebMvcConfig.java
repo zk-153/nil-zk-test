@@ -14,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @author xiedeqi
  * @since nile-cmgdbs-data-monitor-be 0.1.0
  */
+//
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
