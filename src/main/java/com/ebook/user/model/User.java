@@ -1,4 +1,10 @@
-package com.example.model;
+/*
+ * 广州丰石科技有限公司拥有本软件版权2019并保留所有权利。
+ * Copyright 2019, Guangzhou Rich Stone Data Technologies Company Limited,
+ * All rights reserved.
+ */
+
+package com.ebook.user.model;
 
 import java.io.Serializable;
 
