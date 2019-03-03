@@ -11,6 +11,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * <b><code>UserDao</code></b>
  * <p/>
@@ -24,5 +26,15 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface UserDao {
+
     public User getUser(@Param("name") String name,@Param("password") String password);
+
+    public List<User> listUser();
+
+    public void addUser(@Param("user") User user);
+
+    public void delUser(@Param("id") Integer id);
+
+    public void updateUser(@Param("user") User user);
+
 }

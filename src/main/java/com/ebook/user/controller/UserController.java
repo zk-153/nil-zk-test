@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * <b><code>UserController</code></b>
  * <p/>
@@ -32,6 +34,26 @@ public class UserController {
     @GetMapping(value="getUser")
     public User getUser(String name,String password){
         return userService.getUser(name,password);
+    }
+
+    @GetMapping("listUser")
+    public List<User> listUser(){
+        return userService.listUser();
+    }
+
+    @GetMapping(value="addUser")
+    public void addUser(User user){
+        userService.addUser(user);
+    }
+
+    @GetMapping(value="updateUser")
+    public void updateUser(User user){
+        userService.updateUser(user);
+    }
+
+    @GetMapping(value="delUser")
+    public void delUser(Integer id){
+        userService.delUser(id);
     }
 
 }

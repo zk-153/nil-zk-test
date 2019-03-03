@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <b><code>UserService</code></b>
  * <p/>
@@ -30,6 +32,22 @@ public class UserService {
 
     public User getUser(String name,String password){
         return userDao.getUser(name,password);
+    }
+
+    public List<User> listUser(){
+        return userDao.listUser();
+    }
+
+    public void addUser(User user){
+        userDao.addUser(user);
+    }
+
+    public void updateUser(User user){
+        userDao.updateUser(user);
+    }
+
+    public void delUser(Integer id){
+        userDao.delUser(id);
     }
 
 }
