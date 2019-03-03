@@ -6,6 +6,7 @@
 
 package com.ebook.user.controller;
 
+import com.ebook.common.Result;
 import com.ebook.user.model.User;
 import com.ebook.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,28 +33,35 @@ public class UserController {
     private UserService userService;
 
     @GetMapping(value="getUser")
-    public User getUser(String name,String password){
-        return userService.getUser(name,password);
+    public Result getUser(String name, String password){
+        Result result = new Result();
+        result.setObj(userService.getUser(name,password));
+        return result;
     }
 
     @GetMapping("listUser")
-    public List<User> listUser(){
-        return userService.listUser();
+    public Result listUser(){
+        Result result = new Result();
+        result.setObj(userService.listUser());
+        return result;
     }
 
     @GetMapping(value="addUser")
-    public void addUser(User user){
+    public Result addUser(User user){
         userService.addUser(user);
+        return new Result();
     }
 
     @GetMapping(value="updateUser")
-    public void updateUser(User user){
+    public Result updateUser(User user){
         userService.updateUser(user);
+        return new Result();
     }
 
     @GetMapping(value="delUser")
-    public void delUser(Integer id){
+    public Result delUser(Integer id){
         userService.delUser(id);
+        return new Result();
     }
 
 }
